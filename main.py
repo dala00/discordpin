@@ -1,6 +1,7 @@
 import datetime
 import discord
 import os
+from keep_alive import keep_alive
 
 intents = discord.Intents.default()
 intents.messages = True
@@ -35,4 +36,5 @@ async def on_raw_reaction_remove(reaction):
             await message.unpin()
 
 if __name__ == '__main__':
+    keep_alive()
     client.run(os.environ["DISCORD_BOT_TOKEN"])
