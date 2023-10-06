@@ -32,7 +32,7 @@ async def on_raw_reaction_remove(reaction):
         print(f'{datetime.datetime.now()} Unpinning {reaction.message_id}')
         message = await fetch_message(reaction)
         
-        if not ":pushpin:" in [ reaction.emoji for reaction in message.reactions]:
+        if not "📌" in [ reaction.emoji for reaction in message.reactions]:
             await message.unpin()
 
 if __name__ == '__main__':
